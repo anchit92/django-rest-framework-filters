@@ -1,5 +1,8 @@
+try:
+    from django.urls import include, re_path
+except ImportError:
+    from django.conf.urls import include, url as re_path
 
-from django.conf.urls import include, url
 from rest_framework import routers
 
 from . import views
@@ -15,5 +18,5 @@ router.register('notes', views.NoteViewSet)
 
 
 urlpatterns = [
-    url(r'^', include(router.urls)),
+    re_path(r'^', include(router.urls)),
 ]

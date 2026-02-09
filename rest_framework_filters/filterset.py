@@ -370,7 +370,7 @@ class FilterSet(rest_framework.FilterSet, metaclass=FilterSetMetaclass):
 
     @property
     def form(self):
-        from django_filters import compat
+        from . import compat
 
         form = super().form
         if compat.is_crispy():
